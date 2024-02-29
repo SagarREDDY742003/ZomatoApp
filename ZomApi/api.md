@@ -32,19 +32,25 @@ http://localhost:5500/filter/1?cusineId=1&lcost=100&hcost=700
 // Page3
 
 # (GET) Details of the restaurant
+http://localhost:5500/details/1
 
 # (GET) Menu of Selected Restaurant
+http://localhost:5500/menu/7
 
 // Page4
 
 # (POST) Details of menu selected
+http://localhost:5500/menuDetails
 
 # (POST) Place Order
-
+http://localhost:5500/placeOrder
+ 
 // Page5
 
 # (GET) List of all orders wrt to user
+http://localhost:5500/orders?email=anchal@gmail.com
 
 # (PUT) Update Order details
-
+http://localhost:5500/updateOrder
 # (DELETE) Delete Orders
+http://localhost:5500/deleteOrder
