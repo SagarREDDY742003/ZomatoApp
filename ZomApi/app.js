@@ -33,23 +33,41 @@ app.get('/mealType', async(req,res) => {
 })
 
 // get restaurant details
-app.get('/restaurants',async(req,res) => {
+// app.get('/restaurants',async(req,res) => {
+//     let query = {};
+//     if(req.query.stateId && req.params.mealId){
+//         query = {
+//             "state_id":Number(req.query.stateId),
+//             "mealTypes.mealtype_id":Number(req.query.mealId)
+//         }
+//     }
+//     else if(req.query.mealId){
+//         query = {"mealTypes.mealtype_id":Number(req.query.mealId)}
+//     }
+//     else if(req.query.stateId){
+//         query = {"state_id":Number(req.query.stateId)}
+//     }
+//     let collection = 'RestaurantData';
+//     let output = await getData(collection,query);
+//     res.send(output);
+// });
+
+app.get('/restaurants', async(req,res) =>{
     let query = {};
-    if(req.query.stateId && req.params.mealId){
+    if(req.query.stateId && req.query.mealId){
         query = {
             "state_id":Number(req.query.stateId),
             "mealTypes.mealtype_id":Number(req.query.mealId)
-        }
-    }
-    else if(req.query.mealId){
-        query = {"mealTypes.mealtype_id":Number(req.query.mealId)}
+        } 
     }
     else if(req.query.stateId){
-        query = {"state_id":Number(req.query.stateId)}
+       query = {"state_id":Number(req.query.stateId)} 
+    }else if(req.query.mealId){
+        query = {"mealTypes.mealtype_id":Number(req.query.mealId)}
     }
     let collection = 'RestaurantData';
     let output = await getData(collection,query);
-    res.send(output);
+    res.send(output)
 });
 
 app.get('/filter/:mealId', async(req,res) => {
