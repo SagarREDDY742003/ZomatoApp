@@ -70,6 +70,7 @@ const Search = () => {
                 <option>-----SELECT YOUR RESTAURANTS-----</option>
                 {renderReataurant(restaurant)}
             </select>
+            <button>submit</button>
         </div>
     </div>
     )
