@@ -67,8 +67,15 @@ app.get('/restaurants', async(req,res) =>{
     }
     let collection = 'RestaurantData';
     let output = await getData(collection,query);
-    res.send(output)
+    res.send(output);
 });
+
+// app.get('/restaurants', async(req,res) => {
+//     let query = {"state_id":Number(req.query.stateId)} ;
+//     let collection = 'RestaurantData';
+//     let output = await getData(collection,query);
+//     res.send(output);
+// });
 
 app.get('/filter/:mealId', async(req,res) => {
     let mealId = Number(req.params.mealId);

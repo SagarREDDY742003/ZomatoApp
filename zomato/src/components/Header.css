@@ -2,6 +2,7 @@
     width: 100%;
     box-sizing: border-box;
     margin: 0;
+    /* background-color: white; */
 }
 header{
     width: 100%;
@@ -10,6 +11,7 @@ header{
     background-color: #065b8f;
     /* background-color: rgb(199, 23, 23); */
     align-items: center;
+    justify-content:space-between;
     position:fixed;
     z-index: 1;
 }
@@ -17,17 +19,34 @@ header{
     float: left;
     color: rgb(255, 255, 255);
     margin-left: 3%;
+    width: fit-content;
 }
 .title h2{
     width: 100%;
     font-size: 30px;
+    background-color: #065b8f;
+}
+.autentication{
+    display: flex;
+    width: fit-content;
+    float: left;
+    background-color: #065b8f;
+}
+.autentication i{
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    /* padding: 5px; */
+    /* padding-right: 20px; */
+    margin-right: 20px;
 }
 .autentication button{
     width: 80px;
     height: 30px;
     border-radius: 5px;
     border: none;
-    float: right;
+    /* float: right; */
     margin-right: 4%;
     font-size: 16px;
     font-weight: 600;

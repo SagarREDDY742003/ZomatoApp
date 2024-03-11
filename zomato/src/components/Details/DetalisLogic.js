@@ -3,6 +3,7 @@ import './Details.css';
 import { useState,useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const baseUrl = process.env.REACT_APP_API_URL;
 
@@ -34,7 +35,7 @@ const DetailsLogic = () => {
         if(data){
             return data.map((item) => {
                 return(
-                    <div className='details-container'>
+                    <div className='details-container' key={item.restaurant_id}>
                         <div className='det-img'><img alt='' src={item.restaurant_thumb}/></div>
                         <div className='det-cont'>
                             <p className='resname'>{item.restaurant_name}</p>
@@ -48,23 +49,38 @@ const DetailsLogic = () => {
                                 <button className="btn4"> {item.cuisines[1].cuisine_name}</button>
                              </div>
                         </div>
-
                     </div>
                 )
             })
         } 
     }
+    const renderDet = (data) =>{
+        if(data){
+            return data.map((item) => {
+                return(
+                    <div className='resImg'>
+                        <img alt='' src={item.image_gallery[0]}/>
+                        <img alt='' src={item.image_gallery[1]}/>
+                        <img alt='' src={item.image_gallery[2]}/>
+                        <img alt='' src={item.image_gallery[3]}/>
+                    </div>
+                )
+            })
+        }
+    }
+
     const renderMenue = (data) => {
         if(data){
             return data.map((menudata) => {
                 return(
-                    <div className='menu'>
-                        <div className=''><img alt='' /></div>
-                        <div className='det-cont'>
-                            <p className='resname'>{menudata.menu_name}</p>
-                            <p className='resadd'>  {menudata.description}</p>
-                            <p className='resrating'>{menudata.menu_type}</p>
-                            <p className='contact'> {menudata.menu_price}</p>
+                    <div className='menutab' key={menudata.menu_id}>
+                        <div className='menuimg'><img alt='' src={menudata.menu_image} /></div>
+                        <div className='menucont'>
+                            <p className='menuname'>{menudata.menu_name}</p>
+                            <p className='menudesc'>  {menudata.description}</p>
+                            <p className='menutype'>{menudata.menu_type}</p>
+                            <p className='menuprice'><span>Price:</span> {menudata.menu_price}</p>
+                            <button>Add to Cart</button>
                         </div>
                     </div>
                 )
@@ -76,7 +92,12 @@ const DetailsLogic = () => {
         return(
             <div className='detcontainer'>
                 {renderDetails(restaurantDetails)}
-                {renderMenue(menue)}
+                {renderDet(restaurantDetails)}
+                <div className='menu'>
+                    <h1>MENU</h1>
+                    {renderMenue(menue)}
+                </div>
+                
             </div>
             
         )

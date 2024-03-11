@@ -8,7 +8,7 @@ const QuickDisplay = (props) => {
             return mealData.map((item) => {
                 return(
 
-                        <div className="types">
+                        <div className="types" key={item.mealtype_id} value={item.mealtype_id}>
                             <img src={item.meal_image} alt=""/>
                             <Link to={`/listing/${item.mealtype_id}`} className='lin'>
                                 <div className="type-cont">

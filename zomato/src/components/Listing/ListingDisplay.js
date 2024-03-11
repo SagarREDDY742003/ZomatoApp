@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 const ListingDisplay = (props) => {
 
     // const rating = (rate) => {
-    //     let ad = document.getElementsByClassName('star');
     //     for(let i=0;i<rate;i++){
-    //         ad.appendChild(i);
-    //         i.className('fa-sharp fa-solid fa-star fa-beat');
-    //         i.style.color('#ffc800');
+    //         const no = document.createElement("i");
+    //         no.className = "fa-sharp fa-solid fa-star fa-beat";
+    //         no.style.color = "color:#ffc800";
+    //         document.getElementById("star").appendChild(no);   
     //     }
     // }
     
@@ -18,7 +18,7 @@ const ListingDisplay = (props) => {
             if(listData.length > 0){
                 return listData.map((item) => {
                     return(
-                        <div className="container-item">
+                        <div className="container-item" key={item.restaurant_id}>
                             <Link to={`/details/${item.restaurant_id}`} className='lin'>
                                 <div className="item">
                                     <div className="res-img"><img src={item.restaurant_thumb} alt=""/></div>

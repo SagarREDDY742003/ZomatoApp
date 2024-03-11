@@ -3,6 +3,8 @@
     height: 500px;
     background-size: 100%;
     padding-top: 75px;
+    /* background-color: aquamarine; */
+    
 }
 .mainimg{
     position: absolute;
@@ -19,6 +21,7 @@
     height: 50%;
     display: flex;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0);
 }
 .roter{
     margin-top: 4%;
@@ -29,6 +32,7 @@
     justify-content: center;
     align-items: center;
     animation: revolve 9s infinite;
+    
 }
 @keyframes revolve{
     0%{
@@ -65,6 +69,7 @@
     height: 100%;
     border-radius: 50%;
     position: absolute;
+    
 }
 .roter h3{
     position: relative;
@@ -76,6 +81,7 @@
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
     animation: rev 6s infinite;
+    
 }
 @keyframes rev{
     0%{
@@ -112,6 +118,7 @@
     font-size: 60px;
     color: aliceblue;
     margin-left: 2%;
+    background-color: rgba(255, 255, 255, 0);
 }
 .dropdown{
     width: 100%;
@@ -121,13 +128,42 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0);
 }
 select{
     width: 250px;
-    height: 40%;
+    height: 45%;
     margin-right: 1%;
     background-color: rgb(255, 255, 255);
     color: black;
     font-weight: 400;
     border-radius: 0px;
+}
+.setbt{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+}
+.setbt a{
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0);
+}
+.setbt p{
+    width: fit-content;
+    color: aliceblue;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.setbt button{
+    width: 90px;
+    padding: 6px;
+    background-color: orange;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    color: aliceblue;
 }
