@@ -28,9 +28,11 @@ header{
 }
 .autentication{
     display: flex;
-    width: fit-content;
+    width: 240px;
+    justify-content: space-between;
     float: left;
-    background-color: #065b8f;
+    /* background-color: #065b8f; */
+    margin-right: 10px;
 }
 .autentication i{
     width: 30px;
@@ -42,16 +44,24 @@ header{
     margin-right: 20px;
 }
 .autentication button{
-    width: 80px;
+    width: 70px;
+    margin-right: 5px;
     height: 30px;
     border-radius: 5px;
     border: none;
-    /* float: right; */
-    margin-right: 4%;
+    /* margin-right: 4%; */
     font-size: 16px;
     font-weight: 600;
 }
 .autentication button:hover{
     color: rgb(255, 255, 255);
     background-color: orange;
+}
+.autentication .cart{
+    width: 50px;
+    background-color: transparent;
+}
+.cart i{
+    width: 100%;
+    color: aliceblue;
 }
